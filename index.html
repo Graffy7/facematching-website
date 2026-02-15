@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceMatching - AI-Powered Event Photo Matching</title>
+    <meta name="description" content="Find your event photos instantly using AI facial recognition technology. FaceMatching helps photographers deliver photos faster and attendees find their memories easier.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #667eea;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .how-it-works {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            border-radius: 12px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        .privacy {
+            background: #fff;
+            padding: 40px;
+            border-left: 4px solid #667eea;
+            margin: 40px 0;
+        }
+
+        .privacy h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .privacy ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .privacy li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .privacy li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 12px;
+        }
+
+        .contact h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .contact a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>📸 FaceMatching</h1>
+        <p>Find Your Event Photos Instantly with AI-Powered Facial Recognition</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>What We Do</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; color: #666;">
+                FaceMatching is an innovative photo management solution that uses advanced AI facial recognition 
+                to help event attendees instantly find their photos. No more scrolling through hundreds of images!
+            </p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Instant Photo Discovery</h3>
+                    <p>Take a selfie and instantly find all your photos from any event. Our AI matches your face with professional event photography in seconds.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast & Accurate</h3>
+                    <p>Powered by Azure Face API technology, our system provides industry-leading accuracy and speed in facial recognition and matching.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy-First</h3>
+                    <p>Your facial data is processed in real-time and never stored permanently. We take your privacy seriously with GDPR-compliant practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Photographers Upload</h3>
+                        <p>Event photographers upload photos to our secure platform after the event.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Face Detection</h3>
+                        <p>Our AI automatically detects and indexes all faces in the uploaded photos.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Attendees Take Selfie</h3>
+                        <p>Event attendees scan a QR code and take a quick selfie on their phone.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Instant Results</h3>
+                        <p>AI matches the selfie and displays all photos containing that person instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Perfect For</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎉</div>
+                    <h3>Corporate Events</h3>
+                    <p>Conferences, team buildings, holiday parties, and company celebrations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💒</div>
+                    <h3>Weddings</h3>
+                    <p>Help guests find their photos quickly without bothering the photographer.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>School Events</h3>
+                    <p>Graduations, proms, sports events, and school functions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎪</div>
+                    <h3>Festivals</h3>
+                    <p>Music festivals, trade shows, exhibitions, and public events.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="privacy">
+                <h3>🔐 Privacy & Data Protection</h3>
+                <p style="margin-bottom: 20px;">We are committed to protecting your privacy and handling your data responsibly:</p>
+                <ul>
+                    <li>Explicit user consent required before facial recognition processing</li>
+                    <li>Facial data processed in real-time and not stored permanently</li>
+                    <li>Selfie images deleted immediately after matching</li>
+                    <li>Event photos stored only for event duration (max 90 days)</li>
+                    <li>No sharing of facial recognition data with third parties</li>
+                    <li>Full GDPR and privacy regulation compliance</li>
+                    <li>Users can request data deletion at any time</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="contact">
+                <h2>Get Started with FaceMatching</h2>
+                <p>Transform your event photography experience with AI-powered photo matching</p>
+                <a href="mailto:contact@facematching.com">Contact Us</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 FaceMatching. All rights reserved.</p>
+        <p style="margin-top: 10px;">Powered by Azure Face API | Enterprise-Grade AI Technology</p>
+    </footer>
+</body>
+</html>
